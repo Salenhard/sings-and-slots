@@ -15,7 +15,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
+private slots: // слоты
     void randnum();
 
     void on_pushButton_clicked();

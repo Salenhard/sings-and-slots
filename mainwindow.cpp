@@ -6,8 +6,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(ui->pushButton_2, SIGNAL(clicked(bool)), ui->label,SLOT(clear()));
-    connect(ui->pushButton, SIGNAL(clicked(bool)), this, SLOT(randnum()));
+    // связь сигналов и слотов
+    connect(ui->pushButton_2, SIGNAL(clicked(bool)), ui->label,SLOT(clear())); // сигнал нажатие кнопки pushButton_2 при нажатии очищает сторку
+    connect(ui->pushButton, SIGNAL(clicked(bool)), this, SLOT(randnum())); // сигнал нажатие кнопки pushButton при нажатии заполняет строку рандомным числом
 }
 
 MainWindow::~MainWindow()
@@ -26,7 +27,7 @@ void MainWindow::on_pushButton_2_clicked()
 
 }
 
-void MainWindow::randnum(){
+void MainWindow::randnum(){     // слот рандомное число
     ui->label->setText(QString::number(rand()%100));
 }
 
